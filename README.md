@@ -6,11 +6,6 @@ O foco é aplicar e aprimorar conhecimentos de **HTML, CSS e JavaScript**, segui
 
 ---
 
-## 🚀 Semana 1 — Configuração e Primeiras Interfaces
-
-**Objetivo:** preparar o ambiente de trabalho e criar as telas iniciais (login e cadastro).
-
----
 
 ## 🧰 Tecnologias utilizadas
 
