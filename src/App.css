@@ -1,0 +1,203 @@
+/* CORREÇÃO CRÍTICA:
+    Removemos as regras de max-width, padding e margin do #root padrão
+    para permitir que nosso layout (cabeçalho amarelo, etc.) ocupe 100% da largura.
+*/
+#root {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Garante que o texto comece à esquerda */
+}
+
+/* --- ESTILOS GLOBAIS (BASE) --- */
+body {
+    margin: 0;
+    /* Usaremos apenas 'Inter' para consistência */
+    font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif; 
+    background-color: #1c1c1c; 
+    color: white;
+}
+
+/* --- CONTAINER GERAL DA PÁGINA --- */
+.cadastro-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- 1. CABEÇALHO (FAIXA AMARELA) --- */
+.cpe-header {
+    width: 100%;
+    background-color: #ffd700; /* Amarelo CPE */
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.logo-cpe {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: #000;
+    text-transform: lowercase;
+}
+
+.logo-icon {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+/* Ícone de Voltar (Mobile) */
+.return-button {
+    background: none;
+    border: 2px solid #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s;
+}
+
+.return-button svg {
+    width: 20px;
+    height: 20px;
+    stroke: #000;
+}
+
+/* Esconde o botão de voltar no Desktop */
+@media (min-width: 768px) {
+    .return-button {
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+
+/* --- 2. CONTEÚDO PRINCIPAL E FORMULÁRIO --- */
+.cadastro-main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #1c1c1c; /* Fundo preto/cinza da main */
+}
+
+.cadastro-title {
+    color: #ffd700;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.cadastro-form {
+    width: 100%;
+    max-width: 450px; /* Largura máxima para centralizar o formulário */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo Padrão para TODOS os Inputs */
+.form-input {
+    width: 100%;
+    padding: 18px 25px;
+    margin-bottom: 25px; /* Espaço entre os campos */
+    border-radius: 30px; /* Bordas bem arredondadas, como na imagem */
+    border: none;
+    background-color: white;
+    color: #333;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+.form-input::placeholder {
+    color: #a0a0a0;
+}
+
+.form-input:focus {
+    box-shadow: 0 0 0 3px #ffd70044; /* Efeito de foco suave */
+}
+
+/* --- CAMPO DE SENHA COM ÍCONE (GRUPO) --- */
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.input-with-icon {
+    padding-right: 60px; /* Garante espaço para o ícone */
+}
+
+.toggle-password-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+    padding: 5px; /* Área de clique maior */
+}
+
+.toggle-password-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: #333; /* Cor escura do ícone sobre o fundo branco */
+}
+
+/* --- LINK DE LOGIN --- */
+.login-prompt {
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-prompt a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+    transition: color 0.2s;
+}
+
+.login-prompt a:hover {
+    color: #fff;
+}
+
+/* --- BOTÃO PRINCIPAL (CRIAR CONTA) --- */
+.cpe-button-primary {
+    width: 100%;
+    max-width: 450px;
+    background-color: #ffd700;
+    color: #000;
+    padding: 15px 20px;
+    margin-top: 20px; 
+    border-radius: 30px;
+    border: none;
+    font-weight: 800;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4); /* Sombra para destacar */
+}
+
+.cpe-button-primary:hover {
+    background-color: #ffe033;
+    transform: translateY(-1px);
+}
